@@ -27,24 +27,6 @@ namespace osu.Game.Rulesets.Sentakki.Judgements
             }
         }
 
-        protected override double HealthIncreaseFor(HitResult result)
-        {
-            switch (result)
-            {
-                default:
-                    return 0;
-
-                case HitResult.Miss:
-                    return -0.4;
-
-                case HitResult.Meh:
-                case HitResult.Good:
-                case HitResult.Great:
-                    return 0.4;
-
-                case HitResult.Perfect:
-                    return 0.6;
-            }
-        }
+        protected override double HealthIncreaseFor(HitResult result) => base.HealthIncreaseFor(result);
     }
 }
